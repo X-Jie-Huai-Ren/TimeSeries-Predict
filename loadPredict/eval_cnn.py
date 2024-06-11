@@ -28,7 +28,7 @@ if __name__ == '__main__':
     dataset = LoadDatasetTS(train=False, label_in_feature=True)
     dataloader = DataLoader(
         dataset=dataset,
-        batch_size=24,
+        batch_size=200,
         shuffle=False,
         pin_memory=True
     )
@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
         # plot
         plt.figure()
-        x = np.arange(24)
+        x = np.arange(200)
         y = y.reshape((y.shape[0],)).detach().numpy()
         y_hat = y_hat.reshape((y_hat.shape[0],)).detach().numpy()
         plt.plot(x, y, label='real')
